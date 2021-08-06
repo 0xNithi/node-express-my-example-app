@@ -1,0 +1,15 @@
+{
+  "name": "node-express-my-example-app",
+  "version": "1.0.0",
+  "description": "node-express-my-example-app",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
