@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const { toJSON } = require("./plugins");
+const mongoose = require('mongoose');
+const { toJSON } = require('./plugins');
 
 const tokenSchema = mongoose.Schema(
   {
@@ -10,7 +10,7 @@ const tokenSchema = mongoose.Schema(
     },
     user: {
       type: mongoose.SchemaTypes.ObjectId,
-      ref: "User",
+      ref: 'User',
       required: true,
     },
     expires: {
@@ -24,12 +24,12 @@ const tokenSchema = mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 // add plugin that converts mongoose to json
 tokenSchema.plugin(toJSON);
 
-const Token = mongoose.model("Token", tokenSchema);
+const Token = mongoose.model('Token', tokenSchema);
 
 module.exports = Token;
