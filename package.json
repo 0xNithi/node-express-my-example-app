@@ -4,7 +4,18 @@
   "description": "node-express-my-example-app",
   "main": "src/index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon src/index.js"
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "prettier": "prettier --check **/*.js",
+    "prettier:fix": "prettier --write **/*.js",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write --ignore-unknown"
+    ],
+    "*.+(json|md)": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -17,6 +28,9 @@
     "mongoose": "^5.13.5"
   },
   "devDependencies": {
-    "nodemon": "^2.0.12"
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2"
   }
 }
