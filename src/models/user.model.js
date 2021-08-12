@@ -4,7 +4,7 @@ const { toJSON } = require('./plugins');
 
 const userSchema = mongoose.Schema(
   {
-    usename: {
+    username: {
       type: String,
       required: true,
       unique: true,
