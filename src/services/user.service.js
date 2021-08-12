@@ -22,10 +22,7 @@ const updateUserById = async (userId, updateBody) => {
   if (!user) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
   }
-  if (
-    updateBody.username &&
-    (await User.isUsernameTaken(updateBody.username, userId))
-  ) {
+  if (updateBody.username && (await User.isUsernameTaken(updateBody.username, userId))) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Username already taken');
   }
   Object.assign(user, updateBody);
