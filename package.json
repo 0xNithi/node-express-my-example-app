@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "node-express-my-example-app",
   "main": "src/index.js",
+  "engines": {
+    "node": "14.x"
+  },
   "license": "MIT",
   "scripts": {
     "start": "pm2 start ecosystem.config.json --no-daemon",
