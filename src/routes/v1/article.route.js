@@ -9,7 +9,7 @@ const router = express.Router();
 router
   .route('/')
   .post(auth, validate(articleValidation.createArticle), articleController.createArticle)
-  .get(auth, validate(articleValidation.getArticles), articleController.getArticles);
+  .get(validate(articleValidation.getArticles), articleController.getArticles);
 
 router
   .route('/:articleId')
