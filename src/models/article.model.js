@@ -11,6 +11,11 @@ const articleSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    user: {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: 'User',
+      required: true,
+    },
   },
   {
     timestamps: true,
